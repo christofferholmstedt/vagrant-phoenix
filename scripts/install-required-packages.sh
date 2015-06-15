@@ -6,7 +6,8 @@
 #############################################
 
 ### Basic everyday utilities
-sudo apt-get -y install vim git mutt procmail
+sudo apt-get -y install vim git git-email mutt procmail
 
 ### Build tools
-sudo apt-get -y install build-essential cmake doxygen
+sudo apt-get -y install build-essential binutils autotools-dev pkg-config \
+			cmake doxygen valgrind libtool autoconf automake
