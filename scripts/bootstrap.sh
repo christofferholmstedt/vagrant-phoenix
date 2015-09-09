@@ -42,6 +42,9 @@ sudo apt-get -y autoremove
 # Enable ufw and allow SSH traffic.
 ###
 sudo ufw allow ssh
-sudo ufw allow 8080/tcp
 sudo ufw --force enable
 sudo ufw status verbose
+
+# Set timezone
+echo "Europe/Stockholm" | tee /etc/timezone
+dpkg-reconfigure --frontend noninteractive tzdata
