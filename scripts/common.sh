@@ -10,4 +10,5 @@ sudo apt-get -y install vim git git-email mutt procmail
 
 ### Build tools
 sudo apt-get -y install build-essential binutils autotools-dev pkg-config \
-			cmake doxygen valgrind libtool autoconf automake
+			cmake doxygen valgrind libtool autoconf automake \
+			subversion libncurses5-dev libncursesw5-dev
