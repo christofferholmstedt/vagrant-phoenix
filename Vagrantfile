@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.56.101"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -43,9 +43,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.synced_folder ".", "/vagrant", :disabled => true
     config.vm.synced_folder "./", "/home/vagrant/host"
 
+    config.vm.synced_folder "./config_files", "/var/config_files", create: true
+
     # Provisioning
     config.vm.provision :shell, :path => "./scripts/bootstrap.sh"
-    config.vm.provision :shell, :path => "./scripts/install-required-packages.sh"
+    config.vm.provision :shell, :path => "./scripts/common.sh"
+    # config.vm.provision :shell, :path => "./scripts/lamp.sh"
     # config.vm.provision :shell, :privileged => false, :path =>
     #			"./scripts/example_script_run_as_vagrant_user.sh"
 
